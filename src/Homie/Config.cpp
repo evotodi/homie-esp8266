@@ -39,12 +39,12 @@ bool Config::load() {
 
   size_t configSize = configFile.size();
 
-  if (configSize >= MAX_JSON_CONFIG_FILE_SIZE) {
+  if (configSize >= uint16_t(MAX_JSON_CONFIG_FILE_SIZE)) {
     Interface::get().getLogger() << F("✖ Config file too big") << endl;
     return false;
   }
 
-  char buf[MAX_JSON_CONFIG_FILE_SIZE];
+  char buf[uint16_t(MAX_JSON_CONFIG_FILE_SIZE)];
   configFile.readBytes(buf, configSize);
   configFile.close();
   buf[configSize] = '\0';
@@ -151,7 +151,7 @@ char* Config::getSafeConfigFile() const {
   File configFile = SPIFFS.open(CONFIG_FILE_PATH, "r");
   size_t configSize = configFile.size();
 
-  char buf[MAX_JSON_CONFIG_FILE_SIZE];
+  char buf[uint16_t(MAX_JSON_CONFIG_FILE_SIZE)];
   configFile.readBytes(buf, configSize);
   configFile.close();
   buf[configSize] = '\0';
@@ -240,7 +240,7 @@ bool Config::patch(const char* patch) {
 
   size_t configSize = configFile.size();
 
-  char configJson[MAX_JSON_CONFIG_FILE_SIZE];
+  char configJson[uint16_t(MAX_JSON_CONFIG_FILE_SIZE)];
   configFile.readBytes(configJson, configSize);
   configFile.close();
   configJson[configSize] = '\0';
