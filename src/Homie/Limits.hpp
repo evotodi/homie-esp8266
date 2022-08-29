@@ -3,10 +3,10 @@
 #include <ArduinoJson.h>
 
 namespace HomieInternals {
-  const uint16_t MAX_JSON_CONFIG_FILE_SIZE = 1000;
+  const uint16_t MAX_JSON_CONFIG_FILE_SIZE = 2000;
 
   // max setting elements
-  const uint8_t MAX_CONFIG_SETTING_SIZE = 10;
+  const uint8_t MAX_CONFIG_SETTING_SIZE = 20;
   // 6 elements at root, 9 elements at wifi, 6 elements at mqtt, 1 element at ota, max settings elements
   const uint16_t MAX_JSON_CONFIG_ARDUINOJSON_BUFFER_SIZE = JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(9) + JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(1) + JSON_OBJECT_SIZE(MAX_CONFIG_SETTING_SIZE);
 
