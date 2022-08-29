@@ -3,11 +3,11 @@
 #include <ArduinoJson.h>
 
 #ifndef MAX_JSON_CONFIG_FILE_SIZE
-    #define MAX_JSON_CONFIG_FILE_SIZE 1000
+    #define MAX_JSON_CONFIG_FILE_SIZE 2000
 #endif
 
 #ifndef MAX_CONFIG_SETTING_SIZE
-    #define MAX_CONFIG_SETTING_SIZE 10
+    #define MAX_CONFIG_SETTING_SIZE 20
 #endif
 
 namespace HomieInternals {
