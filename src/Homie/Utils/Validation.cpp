@@ -373,7 +373,7 @@ ConfigValidationResult Validation::_validateConfigSettings(const JsonObject obje
 
   JsonObject settingsObject = object["settings"] | emptySettingsDoc.to<JsonObject>();
 
-  if (settingsObject.size() > uint8_t(MAX_CONFIG_SETTING_SIZE)) {//max settings here and in isettings
+  if (settingsObject.size() > MAX_CONFIG_SETTING_SIZE) {//max settings here and in isettings
     result.reason = F("settings contains more elements than the set limit");
     return result;
   }
